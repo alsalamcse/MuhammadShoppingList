@@ -39,10 +39,10 @@
         tools:layout_editor_absoluteY="142dp" />
 
     <Button
-        android:id="@+id/btin"
+        android:id="@+id/btnin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0.06"
         android:text="sign in"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="220dp" />
@@ -53,7 +53,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btUp"
+            android:id="@+id/btnUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -62,7 +62,7 @@
             tools:layout_editor_absoluteY="371dp" />
 
         <Button
-            android:id="@+id/btForgot"
+            android:id="@+id/btnForgot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
