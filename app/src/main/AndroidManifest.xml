@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".signup" />
-        <activity android:name=".SignIn"></activity>
+        <activity android:name=".SignIn" />
+        <activity
+            android:name=".mainlistfragments.MainListActivity"
+            android:label="@string/title_activity_main_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

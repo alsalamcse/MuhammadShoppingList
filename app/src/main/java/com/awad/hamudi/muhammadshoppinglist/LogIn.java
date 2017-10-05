@@ -1,9 +1,13 @@
 package com.awad.hamudi.muhammadshoppinglist;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.awad.hamudi.muhammadshoppinglist.mainlistfragments.MainListActivity;
 
 public class LogIn extends AppCompatActivity
 {
@@ -24,5 +28,15 @@ public class LogIn extends AppCompatActivity
         btnin = (Button) findViewById(R.id.btnin);
         btnForgot = (Button) findViewById(R.id.btnForgot);
         btnUp = (Button) findViewById(R.id.btnUp);
+        btnin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent i = new Intent(getBaseContext(), MainListActivity.class);
+                startActivity(i);
+
+            }
+        });
     }
 }
