@@ -32,6 +32,8 @@ public class MainListActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private CurrentListFragment currentListFragment;
+    private HistoryFragment historyFragment;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -139,22 +141,33 @@ public class MainListActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            if (position==0)
+            {
+                if (currentListFragment==null)
+                    currentListFragment=new CurrentListFragment();
+                return currentListFragment;
+            }
+            if (position==1){
+                if (historyFragment==null)
+                    historyFragment=new HistoryFragment();
+                return historyFragment;
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Current List";
                 case 1:
-                    return "SECTION 2";
+                    return "History";
                 case 2:
                     return "SECTION 3";
             }
