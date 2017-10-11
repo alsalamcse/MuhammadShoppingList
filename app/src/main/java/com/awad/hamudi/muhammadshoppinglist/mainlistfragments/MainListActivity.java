@@ -1,5 +1,6 @@
 package com.awad.hamudi.muhammadshoppinglist.mainlistfragments;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.awad.hamudi.muhammadshoppinglist.AddItemActivity;
 import com.awad.hamudi.muhammadshoppinglist.R;
 
 public class MainListActivity extends AppCompatActivity {
@@ -60,10 +62,16 @@ public class MainListActivity extends AppCompatActivity {
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
+
+                Intent i =new Intent(getBaseContext(), AddItemActivity.class);
+                startActivity(i);
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
 
@@ -152,7 +160,7 @@ public class MainListActivity extends AppCompatActivity {
                     historyFragment=new HistoryFragment();
                 return historyFragment;
             }
-            return PlaceholderFragment.newInstance(position + 1);
+            return null;
         }
 
         @Override

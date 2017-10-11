@@ -26,8 +26,6 @@ public class LogIn extends AppCompatActivity
         etEm = (EditText) findViewById(R.id.etEm);
         etP = (EditText) findViewById(R.id.etP);
         btnin = (Button) findViewById(R.id.btnin);
-        btnForgot = (Button) findViewById(R.id.btnForgot);
-        btnUp = (Button) findViewById(R.id.btnUp);
         btnin.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -38,5 +36,7 @@ public class LogIn extends AppCompatActivity
 
             }
         });
+        btnForgot = (Button) findViewById(R.id.btnForgot);
+        btnUp = (Button) findViewById(R.id.btnUp);
     }
 }
