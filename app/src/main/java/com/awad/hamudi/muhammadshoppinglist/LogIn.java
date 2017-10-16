@@ -16,6 +16,7 @@ public class LogIn extends AppCompatActivity
     private Button btnin;
     private Button btnForgot;
     private  Button btnUp;
+    private
 
 
     @Override
