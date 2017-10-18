@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.awad.hamudi.muhammadshoppinglist.mainlistfragments.MainListActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LogIn extends AppCompatActivity
 {
@@ -16,9 +18,6 @@ public class LogIn extends AppCompatActivity
     private Button btnin;
     private Button btnForgot;
     private  Button btnUp;
-    private
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
