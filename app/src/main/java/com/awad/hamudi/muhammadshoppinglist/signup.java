@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class signup extends AppCompatActivity
+public class signup extends AppCompatActivity implements OnClickListener
 {
     private EditText etName;
     private EditText etEmail;
@@ -28,8 +29,7 @@ public class signup extends AppCompatActivity
     private FirebaseUser firebaseUser;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         etName = (EditText) findViewById(R.id.etName);
@@ -42,42 +42,61 @@ public class signup extends AppCompatActivity
         firebaseUser = auth.getCurrentUser();
 
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnSave.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataHandler;
+                dataHandler();
             }
         });
     }
-    private void dataHandler(){
-        String stemail=etEmail.getText().toString();
-        String stpassword=etPassword.getText().toString();
-        String stname=etName.getText().toString();
-        String phone=etPhone.getText().toString();
-        String repassword=etRePass.getText().toString();
-        boolean isOk=true;
-        if (stemail.length()==0||stemail.indexOf('@')<1){
 
+    private void dataHandler() {
+        String stemail = etEmail.getText().toString();
+        String stpassword = etPassword.getText().toString();
+        String stname = etName.getText().toString();
+        String phone = etPhone.getText().toString();
+        String repassword = etRePass.getText().toString();
+        boolean isOk = true;
+        if (stemail.length() == 0 || stemail.indexOf('@') < 1) {
+            etEmail.setError("WRONG EMAIL");
+            isOk = false;
+        }
+        if (stpassword.length() < 8) {
+            etPassword.setError("BAD PASSWORD");
+            isOk = false;
+        }
+        if (isOk) {
+            creatAcount(stemail, stpassword);
         }
     }
-    private void creatAcount(String email, String passw)
-    {
-        auth.createUserWithEmailAndPassword(email, passw).addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>()
-        {
+
+    private void creatAcount(String email, String passw) {
+        auth.createUserWithEmailAndPassword(email, passw).addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task)
-            {
-                if (task.isSuccessful())
-                {
-                    Toast.makeText(signup.this,"Authentication Successful.",Toast.LENGTH_SHORT).show();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(signup.this, "Authentication Successful.", Toast.LENGTH_SHORT).show();
                     finish();
-                }
-                else
-                    {
-                    Toast.makeText(signup.this, "Authentication Failed."+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(signup.this, "Authentication Failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
                 }
             }
         });
+        FirebaseAuth.getInstance().signOut();
+    }
+
+    {
+
+
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        if (btnSave==view)
+        {
+            dataHandler();
+        }
     }
 }
