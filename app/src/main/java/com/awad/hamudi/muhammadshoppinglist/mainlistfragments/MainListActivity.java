@@ -155,7 +155,8 @@ public class MainListActivity extends AppCompatActivity {
                     currentListFragment=new CurrentListFragment();
                 return currentListFragment;
             }
-            if (position==1){
+            if (position==1)
+            {
                 if (historyFragment==null)
                     historyFragment=new HistoryFragment();
                 return historyFragment;
@@ -164,7 +165,8 @@ public class MainListActivity extends AppCompatActivity {
         }
 
         @Override
-        public int getCount() {
+        public int getCount()
+        {
             // Show 3 total pages.
             return 2;
         }

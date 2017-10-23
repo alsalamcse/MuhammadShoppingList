@@ -42,7 +42,8 @@
         android:id="@+id/btnin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sign in"
+        android:onClick="onClick"
+        android:text="log in"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="220dp" />
 
