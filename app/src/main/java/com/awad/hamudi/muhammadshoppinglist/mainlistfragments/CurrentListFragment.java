@@ -44,9 +44,8 @@ public class CurrentListFragment extends Fragment
         tvCountValue = (TextView) view.findViewById(R.id.tvCountValue);
         imbSave = (ImageButton) view.findViewById(R.id.imbSave);
         lstvCurrent = (ListView) view.findViewById(R.id.lstvCurrent);
-
         String [] ar={"noor","rimaa","teya","shada"};
-        ArrayAdapter <String> arrayAdapter= new ArrayAdapter<String>(this,)
+
         return view;
     }
 
