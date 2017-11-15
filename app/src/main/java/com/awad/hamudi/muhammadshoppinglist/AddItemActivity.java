@@ -2,9 +2,12 @@ package com.awad.hamudi.muhammadshoppinglist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.google.firebase.database.DatabaseReference;
 
 public class AddItemActivity extends AppCompatActivity
 {
@@ -25,6 +28,13 @@ public class AddItemActivity extends AppCompatActivity
         etUnits = (EditText) findViewById(R.id.etUnits);
         iBtnImage = (ImageButton) findViewById(R.id.iBtnImage);
         btnSave = (Button) findViewById(R.id.btnSave);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dataHandler();
+            }
+        });
     }
     public void dataHandler(){
         String stname= etName.getText().toString();
@@ -33,5 +43,7 @@ public class AddItemActivity extends AppCompatActivity
         String stUnits= etUnits.getText().toString();
         double amount= Double.parseDouble(stAmount);
         double price = Double.parseDouble(stPrice);
+
+        DatabaseReference
     }
 }
