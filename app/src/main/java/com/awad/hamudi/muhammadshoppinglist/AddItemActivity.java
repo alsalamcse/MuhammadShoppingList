@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AddItemActivity extends AppCompatActivity
 {
@@ -44,6 +45,11 @@ public class AddItemActivity extends AppCompatActivity
         double amount= Double.parseDouble(stAmount);
         double price = Double.parseDouble(stPrice);
 
-        DatabaseReference
+        DatabaseReference reference;
+        //todo לקבלת קישור למסד הניתונים שלנו
+        //todo קישור הינו לשורש של המסד הניתונים
+        reference = FirebaseDatabase.getInstance().getReference();
+
+        reference.child("list").setValue(stname);
     }
 }
