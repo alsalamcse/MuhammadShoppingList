@@ -29,11 +29,8 @@ public class product
     private String keyid;
     /**
      * building object
-     * @param name
-     * @param price
-     * @param amount
      */
-    public product(String name, double price, double amount){
+    public product(){
         this.name= name;
         this.price=price;
         this.amount=amount;
@@ -49,4 +46,52 @@ public class product
         this.keyid= keyid;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public boolean iscompleted() {
+        return iscompleted;
+    }
+
+    public void setIscompleted(boolean iscompleted) {
+        this.iscompleted = iscompleted;
+    }
+
+    public String getImgpath() {
+        return imgpath;
+    }
+
+    public void setImgpath(String imgpath) {
+        this.imgpath = imgpath;
+    }
+
+    public String getKeyid() {
+        return keyid;
+    }
+
+    public void setKeyid(String keyid) {
+        this.keyid = keyid;
+    }
 }
