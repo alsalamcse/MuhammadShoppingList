@@ -80,17 +80,16 @@ public class AddItemActivity extends AppCompatActivity
         reference = FirebaseDatabase.getInstance().getReference();
         //7. saving data on the firebase database
         reference.child(email).child("myList").push().setValue(p).
-                //8. add CompleteListener to check if the insertion done
-                addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                addOnCompleteListener(this, new OnCompleteListener<Void>() {//8. add CompleteListener to check if the insertion done
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
                 {
-                    Toast.makeText(AddItemActivity.this, "Add Product Successful", Toast.LENGTH_SHORT);
+                    Toast.makeText(AddItemActivity.this, "Add Product Successful", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(AddItemActivity.this, "Add Product Failed", Toast.LENGTH_SHORT);
+                    Toast.makeText(AddItemActivity.this, "Add Product Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
