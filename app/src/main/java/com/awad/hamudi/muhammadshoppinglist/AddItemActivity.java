@@ -79,7 +79,9 @@ public class AddItemActivity extends AppCompatActivity
         //todo קישור הינו לשורש של המסד הניתונים
         reference = FirebaseDatabase.getInstance().getReference();
         //7. saving data on the firebase database
-        reference.child(email).child("myList").push().setValue(p).addOnCompleteListener(this, new OnCompleteListener<Void>() {
+        reference.child(email).child("myList").push().setValue(p).
+                //8. add CompleteListener to check if the insertion done
+                addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
@@ -93,6 +95,6 @@ public class AddItemActivity extends AppCompatActivity
             }
         });
         //todo Testing
-        ///reference.child("list").setValue(stname);
+        //reference.child("list").setValue(stname);
     }
 }
