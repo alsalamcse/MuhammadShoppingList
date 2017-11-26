@@ -55,13 +55,14 @@ public class AddItemActivity extends AppCompatActivity
         //isok=true...
 
         //3. data manipulation
-        double amount= Double.parseDouble(stAmount);
+        double amount = Double.parseDouble(stAmount);
         double price = Double.parseDouble(stPrice);
+
 
         //4. building data object
         product p= new product();
         p.setName(stname);
-        p.setAmount(amount);
+        p.setName(stAmount);
         p.setPrice(price);
         p.setIscompleted(false);
 
