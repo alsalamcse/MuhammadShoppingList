@@ -87,7 +87,7 @@ public class CurrentListFragment extends Fragment
             @Override
             public void onCancelled(DatabaseError databaseError)
             {
-
+                
             }
         });
     }
