@@ -47,5 +47,6 @@
             android:layout_above="@+id/itmTvAmount"
             android:layout_alignParentEnd="true"
             android:text="@string/iscomleted" />
+
     </RelativeLayout>
 </LinearLayout>

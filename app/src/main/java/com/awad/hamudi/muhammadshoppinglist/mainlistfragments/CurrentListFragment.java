@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.awad.hamudi.muhammadshoppinglist.R;
+import com.awad.hamudi.muhammadshoppinglist.data.ProductAdapter;
 import com.awad.hamudi.muhammadshoppinglist.data.product;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,6 +36,9 @@ public class CurrentListFragment extends Fragment
     private ImageButton imbSave;
     private ListView lstvCurrent;
 
+    //8.
+    private ProductAdapter productAdapter;
+
     public CurrentListFragment()
     {
         // Required empty public constructor
@@ -53,7 +57,11 @@ public class CurrentListFragment extends Fragment
         tvCountValue = (TextView) view.findViewById(R.id.tvCountValue);
         imbSave = (ImageButton) view.findViewById(R.id.imbSave);
         lstvCurrent = (ListView) view.findViewById(R.id.lstvCurrent);
-        String [] ar={"noor","rimaa","teya","shada"};
+
+        //9.
+        productAdapter=new ProductAdapter(getContext(),R.layout.product_item);
+
+
         //
         readAndlisten();
         //4.
