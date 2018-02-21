@@ -38,6 +38,7 @@ public class ProductAdapter extends ArrayAdapter<product>
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
     {
+        //
         View view= LayoutInflater.from(getContext()).inflate(R.layout.product_item,parent,false);
         return view;
     }

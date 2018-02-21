@@ -73,9 +73,11 @@ public class CurrentListFragment extends Fragment
         //todo קישור הינו לשורש של המסד הניתונים
         reference = FirebaseDatabase.getInstance().getReference();
         //7. listening to data change
-        reference.child(email).child("myList").addValueEventListener(new ValueEventListener() {
+        reference.child(email).child("myList")
+                //todo בפעם הראשןנה שמופעל המאזין מקבלים העתק לכל הנתונים תחת כתובת זו
+                .addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
+            public void onDataChange(DataSnapshot dataSnapshot) //todo
             {
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
