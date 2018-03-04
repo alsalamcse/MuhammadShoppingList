@@ -62,7 +62,7 @@ public class AddItemActivity extends AppCompatActivity
         //4. building data object
         product p= new product();
         p.setName(stname);
-        p.setName(stAmount);
+        p.setAmount(amount);
         p.setPrice(price);
         p.setIscompleted(false);
 

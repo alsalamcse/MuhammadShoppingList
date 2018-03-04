@@ -60,6 +60,7 @@ public class CurrentListFragment extends Fragment
 
         //9.
         productAdapter=new ProductAdapter(getContext(),R.layout.product_item);
+        lstvCurrent.setAdapter(productAdapter);
 
 
         //
@@ -91,6 +92,7 @@ public class CurrentListFragment extends Fragment
                 {
                     product p=ds.getValue(product.class);
                     Log.d("SL",p.toString());
+                    productAdapter.add(p);
                 }
             }
 
