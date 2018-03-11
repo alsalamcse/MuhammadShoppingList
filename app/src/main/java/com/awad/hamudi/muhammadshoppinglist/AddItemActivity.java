@@ -37,7 +37,7 @@ public class AddItemActivity extends AppCompatActivity
         iBtnImage = (ImageButton) findViewById(R.id.iBtnImage);
         btnSave = (Button) findViewById(R.id.btnSave);
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnSave.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dataHandler();
